@@ -1,0 +1,13 @@
+.gallery__like {
+  border: none;
+  padding: 11px;
+  background: url(../../../images/heart.svg) no-repeat center;
+}
+
+.gallery__like:hover {
+  background: url(../../../images/heart_hover.svg) no-repeat center;
+}
+
+.gallery__like:active {
+  background: url(../../../images/heart_active.png) no-repeat center;
+}

@@ -1,0 +1,6 @@
+.gallery__place {
+  color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

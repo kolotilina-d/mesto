@@ -1,0 +1,15 @@
+.profile__add-button {
+  border: 0;
+  padding: 25px 75px;
+  background: url(../../../images/Add-Button.svg) no-repeat center;
+  justify-self: end;
+}
+
+@media screen and (max-width: 700px) {
+  .profile__add-button {
+    padding: 25px 141px;
+    grid-row: 3;
+    background: url(../../../images/Add-Button_big.png);
+    justify-self: center;
+  }
+}

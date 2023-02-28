@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+
+<body class="root">
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__logo"></div>
+    </header>
+    <main>
+      <section class="profile">
+        <img class="profile__photo" src="./images/Avatar.jpg" alt="картинка пользователя">
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h2 class="profile__profession">Исследователь океана</h2>
+          <button type="button" class="profile__edit-button"></button>
+        </div>
+        <button type="button" class="profile__add-button"></button>
+      </section>
+      <section class="form">
+        <form action="" method="get" class="form__info">
+          <h2 class="form__title">Редактировать профиль</h2>
+          <div class="form__name">
+            <input class="form__input" placeholder="Жак-Ив Кусто" type="text" name="name" id="name" required>
+          </div>
+          <div class="form__profession">
+            <input  class="form__input" placeholder="Исследователь океана" type="text" name="profession" id="email" required>
+          </div>
+          <div class="form__save">
+            <input class="form__submit" type="submit" value="Сохранить">
+          </div>
+        </form>
+      </section>
+      <section class="gallery">
+        <ul class="gallery__elements">
+          <li class="gallery__element">
+            <img src="./images/karachaevsk.jpg" alt="монастырь в горах" class="gallery__photo">
+            <div class="gallery__underscribe">
+              <h2 class="gallery__place">Карачаевско-Черкесская республика</h2>
+              <button class="gallery__like"></button>
+            </div>
+          </li>
+          <li class="gallery__element">
+            <img src="./images/Elbrus.jpg" alt="вид на гору издалека на рассвете" class="gallery__photo">
+            <div class="gallery__underscribe">
+              <h2 class="gallery__place">Эльбрус</h2>
+              <button class="gallery__like"></button>
+            </div>
+          </li>
+          <li class="gallery__element">
+            <img src="./images/Dombai.jpg" alt="вершина горы" class="gallery__photo">
+            <div class="gallery__underscribe">
+              <h2 class="gallery__place">Домбай</h2>
+              <button class="gallery__like"></button>
+            </div>
+          </li>
+          <li class="gallery__element">
+            <img src="./images/kamchatka.jpg" alt="равнина за которой виднеется гора в тумане" class="gallery__photo">
+            <div class="gallery__underscribe">
+              <h2 class="gallery__place">Камчатка</h2>
+              <button class="gallery__like"></button>
+            </div>
+          </li>
+          <li class="gallery__element">
+            <img src="./images/rybachiy.jpg" alt="вид не реку из-за ветвей кустарника" class="gallery__photo">
+            <div class="gallery__underscribe">
+              <h2 class="gallery__place">Рыбачий</h2>
+              <button class="gallery__like"></button>
+            </div>
+          </li>
+          <li class="gallery__element">
+            <img src="./images/baikal.jpg" alt="скалистй берег озера" class="gallery__photo">
+            <div class="gallery__underscribe">
+              <h2 class="gallery__place">Байкал</h2>
+              <button class="gallery__like"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__copyright">&copy; 2023 Mesto Russia</div>
+    </footer>
+  </div>
+</body>
+
+</html>
