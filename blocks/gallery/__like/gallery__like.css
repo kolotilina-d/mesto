@@ -5,7 +5,8 @@
 }
 
 .gallery__like:hover {
-  background: url(../../../images/heart_hover.svg) no-repeat center;
+  opacity: 0.8;
+  transition: opacity 0.7s ease;
 }
 
 .gallery__like:active {

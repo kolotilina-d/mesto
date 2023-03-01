@@ -24,23 +24,22 @@
         </div>
         <button type="button" class="profile__add-button"></button>
       </section>
-      <section class="popup popup_opened">
+      <section class="popup">
         <div class="popup__container">
-        <form action="" method="get" class="popup__info">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <div class="popup__name">
-            <input class="popup__input" placeholder="Жак-Ив Кусто" type="text" name="name" id="name" required>
-          </div>
-          <div class="popup__profession">
-            <input class="popup__input" placeholder="Исследователь океана" type="text" name="profession" id="email"
-              required>
-          </div>
-          <div class="popup__save">
-            <input class="popup__submit" type="submit" value="Сохранить">
-          </div>
-        </form>
-        <button class="popup__close"></button>
-      </div>
+          <form action="" method="get" class="popup__info">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <div class="popup__name">
+              <input class="popup__input" type="text" id="name" value="name" required>
+            </div>
+            <div class="popup__profession">
+              <input class="popup__input" type="text" id="profession" value="profession" required>
+            </div>
+            <div class="popup__save">
+              <input class="popup__submit" type="submit" value="Сохранить">
+            </div>
+          </form>
+          <button class="popup__close"></button>
+        </div>
       </section>
       <section class="gallery">
         <ul class="gallery__elements">
@@ -93,6 +92,7 @@
       <div class="footer__copyright">&copy; 2023 Mesto Russia</div>
     </footer>
   </div>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
