@@ -31,9 +31,7 @@ function handleFormSubmit(evt) {
   elem1.textContent = nameInput.value;
   elem2.textContent = jobInput.value;
 
-  document.querySelector('.popup__save').addEventListener('click', function() {
-    openPopup.classList.remove('popup_opened');
-  })
-}
+  openPopup.classList.remove('popup_opened');
+  }
 
 formElement.addEventListener('submit', handleFormSubmit);
