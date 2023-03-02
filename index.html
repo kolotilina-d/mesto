@@ -19,80 +19,74 @@
         <img class="profile__photo" src="./images/Avatar.jpg" alt="картинка пользователя">
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <h2 class="profile__profession">Исследователь океана</h2>
+          <p class="profile__profession">Исследователь океана</p>
           <button type="button" class="profile__edit-button"></button>
         </div>
         <button type="button" class="profile__add-button"></button>
-      </section>
-      <section class="popup">
-        <div class="popup__container">
-          <form action="" method="get" class="popup__info">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <div class="popup__name">
-              <input class="popup__input" type="text" id="name" value="name" required>
-            </div>
-            <div class="popup__profession">
-              <input class="popup__input" type="text" id="profession" value="profession" required>
-            </div>
-            <div class="popup__save">
-              <input class="popup__submit" type="submit" value="Сохранить">
-            </div>
-          </form>
-          <button class="popup__close"></button>
-        </div>
       </section>
       <section class="gallery">
         <ul class="gallery__elements">
           <li class="gallery__element">
             <img src="./images/karachaevsk.jpg" alt="монастырь в горах" class="gallery__photo">
             <div class="gallery__underscribe">
-              <h2 class="gallery__place">Карачаево-Черкесская республика</h2>
-              <button class="gallery__like"></button>
+              <p class="gallery__place">Карачаево-Черкесская республика</p>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
           <li class="gallery__element">
             <img src="./images/Elbrus.jpg" alt="вид на гору издалека на рассвете" class="gallery__photo">
             <div class="gallery__underscribe">
-              <h2 class="gallery__place">Эльбрус</h2>
-              <button class="gallery__like"></button>
+              <p class="gallery__place">Эльбрус</p>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
           <li class="gallery__element">
             <img src="./images/Dombai.jpg" alt="вершина горы" class="gallery__photo">
             <div class="gallery__underscribe">
-              <h2 class="gallery__place">Домбай</h2>
-              <button class="gallery__like"></button>
+              <p class="gallery__place">Домбай</p>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
           <li class="gallery__element">
             <img src="./images/kamchatka.jpg" alt="равнина за которой виднеется гора в тумане" class="gallery__photo">
             <div class="gallery__underscribe">
-              <h2 class="gallery__place">Камчатка</h2>
-              <button class="gallery__like"></button>
+              <p class="gallery__place">Камчатка</p>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
           <li class="gallery__element">
             <img src="./images/rybachiy.jpg" alt="вид не реку из-за ветвей кустарника" class="gallery__photo">
             <div class="gallery__underscribe">
-              <h2 class="gallery__place">Рыбачий</h2>
-              <button class="gallery__like"></button>
+              <p class="gallery__place">Рыбачий</p>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
           <li class="gallery__element">
             <img src="./images/baikal.jpg" alt="скалистй берег озера" class="gallery__photo">
             <div class="gallery__underscribe">
-              <h2 class="gallery__place">Байкал</h2>
-              <button class="gallery__like"></button>
+              <p class="gallery__place">Байкал</p>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
         </ul>
       </section>
     </main>
     <footer class="footer">
-      <div class="footer__copyright">&copy; 2023 Mesto Russia</div>
+      <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
+    <section class="popup">
+      <div class="popup__container">
+        <form name="popup-form" action="" method="get" class="popup__info">
+          <p class="popup__title">Редактировать профиль</p>
+            <input class="popup__input" type="text" id="name" name="name" required>
+            <input class="popup__input" type="text" id="profession" name="profession" required>
+            <input class="popup__submit" type="submit" value="Сохранить">
+        </form>
+        <button type="button" class="popup__close"></button>
+      </div>
+    </section>
   </div>
-  <script src="./js/script.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>

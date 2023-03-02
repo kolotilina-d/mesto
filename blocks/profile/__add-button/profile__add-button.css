@@ -3,10 +3,11 @@
   padding: 25px 75px;
   background: url(../../../images/Add-Button.svg) no-repeat center;
   justify-self: end;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
-  opacity: 0.8;
+  opacity: 0.6;
   transition: opacity 0.7s ease;
 }
 
@@ -14,7 +15,7 @@
   .profile__add-button {
     padding: 25px 141px;
     grid-row: 3;
-    background: url(../../../images/Add-Button_big.png);
+    background: url(../../../images/Add-Button_mini.svg);
     justify-self: center;
   }
 }
