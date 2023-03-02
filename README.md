@@ -25,4 +25,4 @@
 1. базовые навыки работы с программой
 2. работа с отступами, экспортом стилей и графических элементов
 
-Сcылка на проект https://kolotilina-d.github.io/russian-travel/
+Сcылка на проект https://kolotilina-d.github.io/mesto/
