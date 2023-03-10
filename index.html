@@ -31,6 +31,7 @@
             <div class="gallery__underscribe">
               <p class="gallery__place">Карачаево-Черкесская республика</p>
               <button type="button" class="gallery__like"></button>
+              <button type="button" class="gallery__delete"></button>
             </div>
           </li>
           <li class="gallery__element">
@@ -38,6 +39,7 @@
             <div class="gallery__underscribe">
               <p class="gallery__place">Эльбрус</p>
               <button type="button" class="gallery__like"></button>
+              <button type="button" class="gallery__delete"></button>
             </div>
           </li>
           <li class="gallery__element">
@@ -45,6 +47,7 @@
             <div class="gallery__underscribe">
               <p class="gallery__place">Домбай</p>
               <button type="button" class="gallery__like"></button>
+              <button type="button" class="gallery__delete"></button>
             </div>
           </li>
           <li class="gallery__element">
@@ -52,6 +55,7 @@
             <div class="gallery__underscribe">
               <p class="gallery__place">Камчатка</p>
               <button type="button" class="gallery__like"></button>
+              <button type="button" class="gallery__delete"></button>
             </div>
           </li>
           <li class="gallery__element">
@@ -59,6 +63,7 @@
             <div class="gallery__underscribe">
               <p class="gallery__place">Рыбачий</p>
               <button type="button" class="gallery__like"></button>
+              <button type="button" class="gallery__delete"></button>
             </div>
           </li>
           <li class="gallery__element">
@@ -66,6 +71,7 @@
             <div class="gallery__underscribe">
               <p class="gallery__place">Байкал</p>
               <button type="button" class="gallery__like"></button>
+              <button type="button" class="gallery__delete"></button>
             </div>
           </li>
         </ul>
@@ -83,6 +89,24 @@
           <input class="popup__submit" type="submit" value="Сохранить">
         </form>
         <button type="button" class="popup__close"></button>
+      </div>
+    </section>
+    <section class="add-photo">
+      <div class="add-photo__container">
+        <form action="" method="get" class="add-photo__form">
+          <h2 class="add-photo__title">Новое место</h2>
+          <input type="text" class="add-photo__input" id="designation" name="designation" placeholder="Название">
+          <input type="text" class="add-photo__input" id="link" name="link" placeholder="Ссылка на картинку">
+          <input type="submit" class="add-photo__submit" value="Создать">
+        </form>
+        <button type="button" class="add-photo__close"></button>
+      </div>
+    </section>
+    <section class="popup-photo">
+      <div class="popup-photo__container">
+        <img class="popup-photo__img" src="#" alt="#">
+        <h2 class="popup__title"></h2>
+        <button type="button" class="popup-photo__close"></button>
       </div>
     </section>
   </div>

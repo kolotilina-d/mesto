@@ -2,7 +2,7 @@ let nameProfile = document.querySelector('.profile__name');
 let profProfile = document.querySelector('.profile__profession');
 
 let popup = document.querySelector('.popup');
-let EditButton = document.querySelector('.profile__edit-button');
+let editButton = document.querySelector('.profile__edit-button');
 
 function openPopup() {
   nameInput.value = nameProfile.textContent;
@@ -11,7 +11,7 @@ function openPopup() {
   popup.classList.add('popup_opened');
 }
 
-EditButton.addEventListener('click', openPopup);
+editButton.addEventListener('click', openPopup);
 
 let closePopup = document.querySelector('.popup__close');
 closePopup.addEventListener('click', function () {
@@ -33,3 +33,40 @@ function handleFormSubmit(evt) {
 }
 
 formElement.addEventListener('submit', handleFormSubmit);
+
+
+let addButton = document.querySelector('.profile__add-button');
+let addPhoto = document.querySelector('.add-photo');
+
+function openAddPhoto() {
+  addPhoto.classList.add('add-photo_opened');
+}
+
+addButton.addEventListener('click', openAddPhoto);
+
+let closeAddPhoto = document.querySelector('.add-photo__close');
+closeAddPhoto.addEventListener('click', () => {
+  addPhoto.classList.remove('add-photo_opened');
+});
+
+// открытие зума фото по клику
+let photo = document.querySelector('.gallery__photo');
+let popupPhoto = document.querySelector('.popup-photo');
+let popupTitle = document.querySelector('.popup__title');
+let galleryPlace = document.querySelector('.gallery__place');
+let closePhoto = document.querySelector('.popup-photo__close');
+let popupImg = document.querySelector('.popup-photo__img')
+
+photo.addEventListener('click', () => {
+  popupImg.src = photo.src;
+  popupImg.alt = photo.alt;
+  popupTitle.value = galleryPlace.textContent;
+
+  popupPhoto.classList.add('popup-photo_opened');
+});
+
+closePhoto.addEventListener('click', () => {
+  popupPhoto.classList.remove('popup-photo_opened');
+});
+
+
