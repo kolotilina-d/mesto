@@ -24,65 +24,26 @@
         </div>
         <button type="button" class="profile__add-button"></button>
       </section>
-      <section class="gallery">
-        <ul class="gallery__elements">
-          <li class="gallery__element">
-            <img src="./images/karachaevsk.jpg" alt="монастырь в горах" class="gallery__photo">
-            <div class="gallery__underscribe">
-              <p class="gallery__place">Карачаево-Черкесская республика</p>
-              <button type="button" class="gallery__like"></button>
-              <button type="button" class="gallery__delete"></button>
-            </div>
-          </li>
-          <li class="gallery__element">
-            <img src="./images/Elbrus.jpg" alt="вид на гору издалека на рассвете" class="gallery__photo">
-            <div class="gallery__underscribe">
-              <p class="gallery__place">Эльбрус</p>
-              <button type="button" class="gallery__like"></button>
-              <button type="button" class="gallery__delete"></button>
-            </div>
-          </li>
-          <li class="gallery__element">
-            <img src="./images/Dombai.jpg" alt="вершина горы" class="gallery__photo">
-            <div class="gallery__underscribe">
-              <p class="gallery__place">Домбай</p>
-              <button type="button" class="gallery__like"></button>
-              <button type="button" class="gallery__delete"></button>
-            </div>
-          </li>
-          <li class="gallery__element">
-            <img src="./images/kamchatka.jpg" alt="равнина за которой виднеется гора в тумане" class="gallery__photo">
-            <div class="gallery__underscribe">
-              <p class="gallery__place">Камчатка</p>
-              <button type="button" class="gallery__like"></button>
-              <button type="button" class="gallery__delete"></button>
-            </div>
-          </li>
-          <li class="gallery__element">
-            <img src="./images/rybachiy.jpg" alt="вид не реку из-за ветвей кустарника" class="gallery__photo">
-            <div class="gallery__underscribe">
-              <p class="gallery__place">Рыбачий</p>
-              <button type="button" class="gallery__like"></button>
-              <button type="button" class="gallery__delete"></button>
-            </div>
-          </li>
-          <li class="gallery__element">
-            <img src="./images/baikal.jpg" alt="скалистй берег озера" class="gallery__photo">
-            <div class="gallery__underscribe">
-              <p class="gallery__place">Байкал</p>
-              <button type="button" class="gallery__like"></button>
-              <button type="button" class="gallery__delete"></button>
-            </div>
-          </li>
-        </ul>
-      </section>
+      <div class="gallery">
+        <ul class="gallery__elements"></ul>
+      </div>
+      <template id="card">
+        <li class="gallery__element">
+          <img src="#" alt="#" class="gallery__photo">
+          <div class="gallery__underscribe">
+            <p class="gallery__place"></p>
+            <button type="button" class="gallery__like"></button>
+            <button type="button" class="gallery__delete"></button>
+          </div>
+        </li>
+      </template>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
     <section class="popup">
       <div class="popup__container">
-        <form name="popup-form" action="" method="get" class="popup__info">
+        <form name="popup-form" method="get" class="popup__info">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input class="popup__input" type="text" id="name" name="name" required>
           <input class="popup__input" type="text" id="profession" name="profession" required>
@@ -93,7 +54,7 @@
     </section>
     <section class="add-photo">
       <div class="add-photo__container">
-        <form action="" method="get" class="add-photo__form">
+        <form method="get" class="add-photo__form">
           <h2 class="add-photo__title">Новое место</h2>
           <input type="text" class="add-photo__input" id="designation" name="designation" placeholder="Название">
           <input type="text" class="add-photo__input" id="link" name="link" placeholder="Ссылка на картинку">
@@ -105,7 +66,7 @@
     <section class="popup-photo">
       <div class="popup-photo__container">
         <img class="popup-photo__img" src="#" alt="#">
-        <h2 class="popup__title"></h2>
+        <h2 class="popup-photo__title">#</h2>
         <button type="button" class="popup-photo__close"></button>
       </div>
     </section>
