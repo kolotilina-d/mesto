@@ -34,6 +34,7 @@ function handleFormSubmit(evt) {
 
 formElement.addEventListener('submit', handleFormSubmit);
 
+
 const popupPhoto = document.querySelector('.popup-photo');
 const popupImg = document.querySelector('.popup-photo__img');
 const popupTitle = document.querySelector('.popup-photo__title');
@@ -85,13 +86,12 @@ function createCard(data) {
   });
 
   //слушатель на открытие фото
-  img.addEventListener('click', openImg);
-  function openImg() {
+  img.addEventListener('click', () => {
     popupImg.src = data.link;
     popupImg.alt = data.name;
     popupTitle.textContent = data.name;
     popupPhoto.classList.add('popup-photo_opened');
-  }
+  });
 
   //слушатель на закрытие зума
   const photoClose = document.querySelector('.popup-photo__close');
@@ -128,24 +128,24 @@ closeAddPhoto.addEventListener('click', () => {
 });
 
 const addElement = document.querySelector('.add-photo__form');
-const imgCard = document.querySelector('.gallery__photo');
-const placeCard = document.querySelector('.gallery__place');
-const place = document.querySelector('.designation');
-const img = document.querySelector('.link');
+const place = document.querySelector('#designation');
+const img = document.querySelector('#link');
 
 function handleAddSubmit(evt) {
   evt.preventDefault();
 
-  imgCard.src = link.value;
-  imgCard.alt = designation.value;
-  placeCard.textContent = designation.value;
+  const newCard = createCard({
+    name: place.value,
+    link: img.value
+  });
 
+  cardContainer.prepend(newCard);
+  evt.target.reset();
   addPhoto.classList.remove('add-photo_opened');
+
 }
 
 addElement.addEventListener('submit', handleAddSubmit);
-
-//ccccccc
 
 
 
