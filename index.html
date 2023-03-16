@@ -16,10 +16,10 @@
     </header>
     <main>
       <section class="profile">
-        <img class="profile__photo" src="./images/Avatar.jpg" alt="картинка пользователя">
+        <img class="profile__photo" src="./images/Avatar-3.png" alt="картинка пользователя">
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <p class="profile__profession">Исследователь океана</p>
+          <h1 class="profile__name">Федор Конюхов</h1>
+          <p class="profile__profession">Путешественник</p>
           <button type="button" class="profile__edit-button"></button>
         </div>
         <button type="button" class="profile__add-button"></button>
@@ -41,36 +41,38 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup popup_info">
       <div class="popup__container">
-        <form name="popup-form" method="get" class="popup__info">
+        <form name="popup-form" method="get" class="popup__info popup__info_profile">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input class="popup__input" type="text" id="name" name="name" required>
-          <input class="popup__input" type="text" id="profession" name="profession" required>
+          <input class="popup__input" type="text" id="name" name="name" placeholder="Имя" required>
+          <input class="popup__input" type="text" id="profession" name="profession" placeholder="Вид деятельности"
+            required>
           <input class="popup__submit" type="submit" value="Сохранить">
         </form>
-        <button type="button" class="popup__close"></button>
+        <button type="button" class="popup__close popup__close_info"></button>
       </div>
     </section>
-    <section class="add-photo">
-      <div class="add-photo__container">
-        <form method="get" class="add-photo__form">
-          <h2 class="add-photo__title">Новое место</h2>
-          <input type="text" class="add-photo__input" id="designation" name="designation" placeholder="Название">
-          <input type="text" class="add-photo__input" id="link" name="link" placeholder="Ссылка на картинку">
-          <input type="submit" class="add-photo__submit" value="Создать">
+    <section class="popup popup_add">
+      <div class="popup__container">
+        <form name="popup-add" method="get" class="popup__info popup__info_add">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" class="popup__input" id="designation" name="designation" placeholder="Название">
+          <input type="text" class="popup__input" id="link" name="link" placeholder="Ссылка на картинку">
+          <input type="submit" class="popup__submit" value="Создать">
         </form>
-        <button type="button" class="add-photo__close"></button>
+        <button type="button" class="popup__close popup__close_add"></button>
       </div>
     </section>
-    <section class="popup-photo">
-      <div class="popup-photo__container">
-        <img class="popup-photo__img" src="#" alt="#">
-        <h2 class="popup-photo__title">#</h2>
-        <button type="button" class="popup-photo__close"></button>
+    <section class="popup popup_photo">
+      <div class="popup__container popup__container_photo">
+        <img class="popup__img" src="#" alt="#">
+        <p class="popup__caption">#</p>
+        <button type="button" class="popup__close popup__close_photo"></button>
       </div>
     </section>
   </div>
+  <script src="./scripts/constants.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 
