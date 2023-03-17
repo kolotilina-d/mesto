@@ -87,6 +87,8 @@ buttonOpenEditProfilePopup.addEventListener('click', function () {
   openPopup(popupEditProfile);
 });
 buttonOpenAddCardPopup.addEventListener('click', function () {
+  placeCard.value = '';
+  imgCard.value = '';
   openPopup(addGalleryPhoto);
 });
 buttonCloseImagePopup.addEventListener('click', function () {
@@ -94,6 +96,7 @@ buttonCloseImagePopup.addEventListener('click', function () {
 });
 buttonCloseEditProfilePopup.addEventListener('click', function () {
   closePopup(popupEditProfile);
+  evt.target.reset();
 });
 buttonCloseAddCardPopup.addEventListener('click', function () {
   closePopup(addGalleryPhoto);
