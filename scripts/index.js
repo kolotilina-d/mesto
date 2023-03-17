@@ -59,7 +59,7 @@ function submitAddForm(evt) {
   });
 
   cardContainer.prepend(newCard);
-  //evt.target.reset();
+  evt.target.reset();
   closePopup(addGalleryPhoto);
 }
 
@@ -87,8 +87,9 @@ buttonOpenEditProfilePopup.addEventListener('click', function () {
   openPopup(popupEditProfile);
 });
 buttonOpenAddCardPopup.addEventListener('click', function () {
-  placeCard.value = '';
-  imgCard.value = '';
+  //placeCard.value = '';
+  //imgCard.value = '';
+  formAddCard.reset();
   openPopup(addGalleryPhoto);
 });
 buttonCloseImagePopup.addEventListener('click', function () {
