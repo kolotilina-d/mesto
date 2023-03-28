@@ -97,7 +97,7 @@ buttonCloseImagePopup.addEventListener('click', function () {
 });
 buttonCloseEditProfilePopup.addEventListener('click', function () {
   closePopup(popupEditProfile);
-  evt.target.reset();
+  //evt.target.reset();
 });
 buttonCloseAddCardPopup.addEventListener('click', function () {
   closePopup(addGalleryPhoto);
@@ -105,3 +105,4 @@ buttonCloseAddCardPopup.addEventListener('click', function () {
 formEditProfile.addEventListener('submit', submitEditProfileForm);
 formAddCard.addEventListener('submit', submitAddForm);
 
+document.querySelector('.profile__info').hidden = true;
