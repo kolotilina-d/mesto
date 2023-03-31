@@ -1,18 +1,15 @@
-.popup__submit {
+.popup__submit_inactive {
+  background-color: white;
+  color: #000000;
+  border-radius: 1px solid black;
+  opacity: .2;
+  pointer-events: none;
+  cursor: not-allowed;
   width: 358px;
   height: 50px;
-  background-color: black;
-  border-radius: 2px;
-  color: #FFFFFF;
   font-weight: 400;
   font-size: 18px;
-  cursor: pointer;
   margin: 23px 0 37px;
-}
-
-.popup__submit:hover {
-  opacity: 0.8;
-  transition: opacity 0.7s ease;
 }
 
 @media screen and (max-width: 700px) {
