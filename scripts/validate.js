@@ -23,7 +23,7 @@ const setEventListeners = (formElement, { inputSelector, submitButton, ...rest }
   disableButtonState(formButton, rest);
   formInputs.forEach(input => {
     input.addEventListener('input', () => {
-      changeErrorClass (input, rest);
+      checkValidityInput (input, rest);
       if (hasInvalidInput(formInputs)) {
         disableButtonState(formButton, rest);
       } else {
@@ -32,7 +32,7 @@ const setEventListeners = (formElement, { inputSelector, submitButton, ...rest }
     });
   });
 }
-const changeErrorClass = (inputElement, {errorClass}) => {
+const checkValidityInput = (inputElement, {errorClass}) => {
   if (inputElement.validity.valid) {
     hideInputError(inputElement, errorClass)
   } else {

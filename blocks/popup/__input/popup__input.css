@@ -1,5 +1,5 @@
 .popup__input {
-  display: block;
+  position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
