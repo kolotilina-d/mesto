@@ -7,14 +7,14 @@ const config = {
   activeButtonClass: 'popup__submit',
 }
 
-const enableValidation = ({ formSelector, ...rest }) => {
+function enableValidation({ formSelector, ...rest }) {
   const forms = Array.from(document.querySelectorAll(formSelector));
   forms.forEach((formElement) => {
     formElement.addEventListener('submit', (e) => {
-      e.preventDefault()
+      e.preventDefault();
     });
-    setEventListeners(formElement, rest)
-  })
+    setEventListeners(formElement, rest);
+  });
 }
 
 const setEventListeners = (formElement, { inputSelector, submitButton, ...rest }) => {
@@ -23,7 +23,7 @@ const setEventListeners = (formElement, { inputSelector, submitButton, ...rest }
   disableButtonState(formButton, rest);
   formInputs.forEach(input => {
     input.addEventListener('input', () => {
-      checkValidityInput (input, rest);
+      checkValidityInput(input, rest);
       if (hasInvalidInput(formInputs)) {
         disableButtonState(formButton, rest);
       } else {
@@ -32,7 +32,8 @@ const setEventListeners = (formElement, { inputSelector, submitButton, ...rest }
     });
   });
 }
-const checkValidityInput = (inputElement, {errorClass}) => {
+
+const checkValidityInput = (inputElement, { errorClass }) => {
   if (inputElement.validity.valid) {
     hideInputError(inputElement, errorClass)
   } else {
@@ -60,16 +61,21 @@ const hideInputError = (input, errorClass) => {
 
 const enableButtonState = (button, { inactiveButtonClass, activeButtonClass }) => {
   button.classList.remove(inactiveButtonClass);
-  button.classList.add(activeButtonClass);
   button.disabled = false;
 }
 
 const disableButtonState = (button, { inactiveButtonClass, activeButtonClass }) => {
   button.classList.add(inactiveButtonClass);
-  button.classList.remove(activeButtonClass);
   button.disabled = true;
 }
 
 enableValidation(config);
 
+const resetErrorTwiceOpened = (formElement) => {
+  formElement.querySelectorAll(config.inputSelector).forEach((input) => {
+    if (!input.validity.valid) {
+      hideInputError(input, config.errorClass);
+    }
+  })
+}
 

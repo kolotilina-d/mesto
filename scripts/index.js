@@ -18,6 +18,8 @@ const placeCard = document.querySelector('#designation');
 const imgCard = document.querySelector('#link');
 const buttonCloseAddCardPopup = document.querySelector('.popup__close_add');
 const buttonCloseImagePopup = document.querySelector('.popup__close_photo');
+const closeButtons = document.querySelectorAll('.popup__close');
+const formButton = formAddCard.querySelector('.popup__submit');
 
 const closePopupWithEsc = (evt) => {
   if (evt.code == "Escape") {
@@ -26,13 +28,14 @@ const closePopupWithEsc = (evt) => {
       closePopup(activePopup)
     }
   }
-};
+}
+
 const closePopupByClickOverlay = () => {
   const popups = Array.from(document.querySelectorAll('.popup'));
   popups.forEach(popup => {
     popup.addEventListener('click', evt => {
       if (evt.target == evt.currentTarget) {
-        popup.classList.remove('popup_opened')
+        closePopup(popup)
       };
     });
   });
@@ -106,25 +109,29 @@ function closePopup(popup) {
 }
 
 buttonOpenEditProfilePopup.addEventListener('click', function () {
+  //сбрасываем ошибки при повторном открытии окна
+  resetErrorTwiceOpened(formEditProfile);
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
   openPopup(popupEditProfile);
 });
 
 buttonOpenAddCardPopup.addEventListener('click', function () {
+  //сбрасываем ошибки при повторном открытии окна
+  resetErrorTwiceOpened(formAddCard);
   formAddCard.reset();
   openPopup(addGalleryPhoto);
+  //дезактивируем кнопку при добавлении новой карточки
+  disableButtonState(formButton, {inactiveButtonClass: config.inactiveButtonClass, activeButtonClass: config.activeButtonClass});
 });
-buttonCloseImagePopup.addEventListener('click', function () {
-  closePopup(popupPhoto);
-});
-buttonCloseEditProfilePopup.addEventListener('click', function () {
-  closePopup(popupEditProfile);
-});
-buttonCloseAddCardPopup.addEventListener('click', function () {
-  closePopup(addGalleryPhoto);
-});
+
 formEditProfile.addEventListener('submit', submitEditProfileForm);
 formAddCard.addEventListener('submit', submitAddForm);
 
 document.querySelector('.profile__info').hidden = true;
+
+// устанавливаем универсальный обработчик закрытия на крестик
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
