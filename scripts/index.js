@@ -17,13 +17,13 @@ const placeCard = document.querySelector('#designation');
 const imgCard = document.querySelector('#link');
 const closeButtons = document.querySelectorAll('.popup__close');
 
-const forms = {};
+const formValidators = {};
 
 Array.from(document.forms).forEach(item => {
-  const form = new FormValidator(config, item)
-  const name = item.name;
-  forms[name] = form;
-  form.enableValidation()
+  const formList = new FormValidator(config, item)
+  const formName = item.name;
+  formValidators[formName] = formList;
+  formList.enableValidation()
 })
 
 // создаем разметку карточки
@@ -90,14 +90,14 @@ function closePopup(popup) {
 }
 
 buttonOpenEditProfilePopup.addEventListener('click', function () {
-  forms.profile.resetErrorTwiceOpened();
+  FormValidators.profile.resetErrorTwiceOpened();
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
   openPopup(popupEditProfile);
 });
 
 buttonOpenAddCardPopup.addEventListener('click', function () {
-  forms.addCard.resetErrorTwiceOpened();
+  formValidators.addCard.resetErrorTwiceOpened();
   formAddCard.reset();
   openPopup(addGalleryPhoto);
 });
