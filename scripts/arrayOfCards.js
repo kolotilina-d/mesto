@@ -1,5 +1,5 @@
 //массив с карточками
-const initialCards = [
+export const initialCards = [
   {
     name: 'Судак',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
