@@ -20,7 +20,7 @@ const closeButtons = document.querySelectorAll('.popup__close');
 const formValidators = {};
 
 Array.from(document.forms).forEach(item => {
-  const formList = new FormValidator(config, item)
+  const formList = new FormValidator(config, item);
   const formName = item.name;
   formValidators[formName] = formList;
   formList.enableValidation()
@@ -90,7 +90,7 @@ function closePopup(popup) {
 }
 
 buttonOpenEditProfilePopup.addEventListener('click', function () {
-  FormValidators.profile.resetErrorTwiceOpened();
+  formValidators.profile.resetErrorTwiceOpened();
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
   openPopup(popupEditProfile);
