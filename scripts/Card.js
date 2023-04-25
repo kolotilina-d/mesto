@@ -1,4 +1,4 @@
-import {popupPhoto, popupImage, buttonCloseImagePopup, popupImageCaption} from './units.js';
+import { popupPhoto, popupImage, popupImageCaption } from './units.js';
 import { openPopup } from './index.js';
 
 export default class Card {
@@ -13,29 +13,28 @@ export default class Card {
 
     return cardElement;
   }
+
   generateCard() {
     this._element = this._getTemplate();
-    this._setEventListeners();
     this._element.querySelector('.gallery__place').textContent = this._name;
-    this._element.querySelector('.gallery__photo').src = this._link;
-    this._element.querySelector('.gallery__photo').alt = this._name;
+    this._cardImage = this._element.querySelector('.gallery__photo');
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._likeButton = this._element.querySelector('.gallery__like');
+    this._setEventListeners();
 
     return this._element;
   }
 
   _handleOpenPopup() {
     popupImage.src = this._link;
+    popupImage.alt = this._name;
     popupImageCaption.textContent = this._name;
     openPopup(popupPhoto);
   }
 
-  _handleClosePopup() {
-    popupImage.src = '';
-    popupPhoto.classList.remove('popup_opened');
-  }
-
   _handleLikeCard() {
-    this._element.querySelector('.gallery__like').classList.toggle('gallery__like_liked');
+    this._likeButton.classList.toggle('gallery__like_liked');
   }
 
   _handleRemoveCard() {
@@ -44,9 +43,8 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._element.querySelector('.gallery__photo').addEventListener('click', () => { this._handleOpenPopup() });
-    buttonCloseImagePopup.addEventListener('click', () => { this._handleClosePopup() });
-    this._element.querySelector('.gallery__like').addEventListener('click', () => { this._handleLikeCard() });
+    this._cardImage.addEventListener('click', () => { this._handleOpenPopup() });
+    this._likeButton.addEventListener('click', () => { this._handleLikeCard() });
     this._element.querySelector('.gallery__delete').addEventListener('click', () => { this._handleRemoveCard() });
   }
 }

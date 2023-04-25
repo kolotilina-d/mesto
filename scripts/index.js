@@ -26,24 +26,23 @@ Array.from(document.forms).forEach(item => {
   formList.enableValidation()
 })
 
-// создаем разметку карточки
-function createCards(elem) {
-  const card = new Card(elem, '#card');
-  const cardElement = card.generateCard();
-  cardList.prepend(cardElement);
-}
+// добавляем карточку в контейнер 
+function createCard(cardElement) {
+  cardList.prepend(cardElement); 
+} 
 
 //отрисовываем начальные карточки
-initialCards.forEach((initialCard) => {
-  createCards(initialCard);
+initialCards.forEach((element) => {
+  const card = new Card(element, '#card');
+  createCard(card.generateCard());
 });
 
 // создание карточки пользователем
 function submitAddForm(evt) {
   evt.preventDefault();
-  const newCardData = { name: placeCard.value, link: imgCard.value }
-  createCards(newCardData);
-  evt.target.reset();
+  const newData = { name: placeCard.value, link: imgCard.value }
+  const newCard = new Card (newData, '#card')
+  createCard(newCard.generateCard());
   closePopup(addGalleryPhoto);
 }
 

@@ -8,9 +8,6 @@ export default class FormValidator {
     this._button = this._formElement.querySelector(this._submitButtonSelector);
   }
   enableValidation() {
-    this._formElement.addEventListener('submit', (e) => {
-      e.preventDefault()
-    })
     this._setEventListeners()
   }
 
@@ -66,7 +63,7 @@ export default class FormValidator {
   }
 
   resetErrorTwiceOpened() {
-    this._formElement.querySelectorAll(this._inputSelector).forEach((input) => {
+    this._inputList.forEach((input) => {
       if (!input.validity.valid) {
         this._hideInputError(input)
       }
