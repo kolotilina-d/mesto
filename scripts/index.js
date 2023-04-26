@@ -26,23 +26,29 @@ Array.from(document.forms).forEach(item => {
   formList.enableValidation()
 })
 
-// добавляем карточку в контейнер 
+//создаем карточки из массива данных
+function  createCards(data, templateSelector) {
+  const card = new Card(data, templateSelector);
+  return card.generateCard();
+}
+
+//вставляем карточки в темплейт
 function createCard(cardElement) {
   cardList.prepend(cardElement); 
 } 
 
-//отрисовываем начальные карточки
+// отрисовываем карточки на странице
 initialCards.forEach((element) => {
-  const card = new Card(element, '#card');
-  createCard(card.generateCard());
+  const card = createCards(element, '#card');
+  createCard(card);
 });
 
 // создание карточки пользователем
 function submitAddForm(evt) {
   evt.preventDefault();
   const newData = { name: placeCard.value, link: imgCard.value }
-  const newCard = new Card (newData, '#card')
-  createCard(newCard.generateCard());
+  const newCard = createCards (newData, '#card')
+  createCard(newCard);
   closePopup(addGalleryPhoto);
 }
 
