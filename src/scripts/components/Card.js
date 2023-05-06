@@ -1,11 +1,10 @@
-import { popupPhoto, popupImage, popupImageCaption } from './units.js';
-import { openPopup } from './index.js';
-
 export default class Card {
-  constructor(data, templateSelector) {
-    this._name = data.name;
+  constructor(data, templateSelector, handleCardClick) {
+    this._data = data;
+    this._name = data.description;
     this._link = data.link;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -27,10 +26,7 @@ export default class Card {
   }
 
   _handleOpenPopup() {
-    popupImage.src = this._link;
-    popupImage.alt = this._name;
-    popupImageCaption.textContent = this._name;
-    openPopup(popupPhoto);
+    this._handleCardClick(this._data);
   }
 
   _handleLikeCard() {
