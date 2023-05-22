@@ -1,6 +1,5 @@
 .gallery__like {
   border: none;
-  margin: 20px 0 0;
   padding: 11px 13px;
   background: url(../../../images/heart.svg) no-repeat center;
   cursor: pointer;

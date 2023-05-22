@@ -16,10 +16,12 @@
     </header>
     <main>
       <section class="profile">
-        <img class="profile__photo" src="<%=require('./images/Avatar3.jpg')%>" alt="картинка пользователя">
+        <button type="button" class="profile__avatar-button">
+        <img class="profile__photo" src="#" alt="аватар пользователя">
+        </button>
         <div class="profile__info">
-          <h1 class="profile__name">Федор Конюхов</h1>
-          <p class="profile__profession">Путешественник</p>
+          <h1 class="profile__name"></h1>
+          <p class="profile__profession"></p>
           <button type="button" class="profile__edit-button"></button>
         </div>
         <button type="button" class="profile__add-button"></button>
@@ -32,7 +34,10 @@
           <img src="#" alt="#" class="gallery__photo">
           <div class="gallery__underscribe">
             <p class="gallery__place"></p>
-            <button type="button" class="gallery__like"></button>
+            <div class="gallery__card-reaction">
+              <button type="button" class="gallery__like"></button>
+              <span class="gallery__like-counter"></span>
+            </div>
             <button type="button" class="gallery__delete"></button>
           </div>
         </li>
@@ -43,7 +48,7 @@
     </footer>
     <section class="popup popup_info">
       <div class="popup__container">
-        <form name="profile" method="get" class="popup__info popup__info_profile" novalidate>
+        <form name="profile"  class="popup__info popup__info_profile" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
           <input class="popup__input" type="text" id="username" name="username" placeholder="Имя" required minlength="2"
             maxlength="40">
@@ -58,7 +63,7 @@
     </section>
     <section class="popup popup_add">
       <div class="popup__container">
-        <form name="addCard" method="get" class="popup__info popup__info_add" novalidate>
+        <form name="addCard"  class="popup__info popup__info_add" novalidate>
           <h2 class="popup__title">Новое место</h2>
           <input type="text" class="popup__input" id="description" name="description" placeholder="Название" required
             minlength="2" maxlength="30">
@@ -77,6 +82,27 @@
         <button type="button" class="popup__close popup__close_photo"></button>
       </div>
     </section>
+    <section class="popup popup_delete-card">
+      <div class="popup__container">
+        <form name="deleteCard"  class="popup__info popup__info_delete-card" novalidate>
+          <h2 class="popup__title popup__title_delete-card">Вы уверены?</h2>
+          <input type="submit" class="popup__submit popup__submit_delete-card" value="Да">
+        </form>
+        <button type="button" class="popup__close popup__close_delete-card"></button>
+      </div>
+    </section>
+    <section class="popup popup_avatar">
+      <div class="popup__container">
+        <form name="addAvatar"  class="popup__info popup__info_avatar" novalidate>
+          <h2 class="popup__title">Обновить аватар</h2>
+          <input type="url" class="popup__input" id="avatar" name="avatar" placeholder="Ссылка на картинку" required>
+          <span class="popup__error" id="avatar-error"></span>
+          <input type="submit" class="popup__submit" value="Сохранить">
+        </form>
+        <button type="button" class="popup__close popup__close_avatar"></button>
+      </div>
+    </section>
+
   </div>
 </body>
 
