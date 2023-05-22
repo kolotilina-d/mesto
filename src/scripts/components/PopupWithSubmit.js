@@ -13,10 +13,6 @@ export default class PopupWithSubmit extends Popup {
     })
   }
 
-  open() {
-    super.open();
-  }
-
   setSubmitAction(submitFunction) {
     this._submitFunction = submitFunction
   }

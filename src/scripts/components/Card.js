@@ -49,9 +49,11 @@ export default class Card {
   _counterOfLikes() {
     this._likeCounter = this._element.querySelector('.gallery__like-counter');
     this._likeCounter.textContent = this._counterLikes;
-    if (this._likes.includes(this.userId)) {
-      this._likeButton.classList.add('gallery__like_liked')
-    }
+    this._likes.forEach((item) => {
+      if (item._id === this.userId) {
+        this._likeButton.classList.add('gallery__like_liked')
+      }
+    })
   }
 
   _handleOpenDelete() {

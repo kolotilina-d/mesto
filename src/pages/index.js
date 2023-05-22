@@ -12,8 +12,6 @@ import {
   popupAddAvatarSelector,
   deleteCardSelector,
   arrayOfNames,
-  placeInput,
-  urlInput,
   cardListSelector,
 } from '../scripts/utils/utils.js';
 import FormValidator from '../scripts/components/FormValidator.js';
@@ -62,31 +60,31 @@ const createNewItem = (data) => {
   return card.generateCard();
 }
 
-const popupWithFormAddCard = new PopupWithForm(popupAddCardsSelector, () => { 
-  api.addNewCard(placeInput.value, urlInput.value)
+const popupWithFormAddCard = new PopupWithForm(popupAddCardsSelector, (data) => { 
+  return api.addNewCard(data)
     .then(res => {
       section.addItem(createNewItem(res));
-      popupWithFormAddCard.close()
+      // popupWithFormAddCard.close()
     })
-    .catch((err) => console.log('Ошибка создания карточки', err))
-    .finally(() => popupWithFormAddCard.setButtonText('Сохранить'))})
-
+    // .catch((err) => console.log('Ошибка создания карточки', err))
+    // .finally(() => popupWithFormAddCard.setButtonText('Сохранить'))})
+  })
 const userInfo = new UserInfo(arrayOfNames);
 
 const popupWithFormUser = new PopupWithForm(popupProfileSelector, (element) => {
-  api.setUserInfo(element)
+  return api.setUserInfo(element)
     .then(res => userInfo.setUserInfo(res))
-    .then(() => popupWithFormUser.close())
-    .catch((err) => console.log('Ошибка изменения данных пользователя', err))
-    .finally(() => popupWithFormUser.setButtonText('Сохранить'))
+    // .then(() => popupWithFormUser.close())
+    // .catch((err) => console.log('Ошибка изменения данных пользователя', err))
+    // .finally(() => popupWithFormUser.setButtonText('Сохранить'))
 })
 
 const popupWithFormAvatar = new PopupWithForm(popupAddAvatarSelector, (element) => {
-  api.setAvatar(element)
+  return api.setAvatar(element)
     .then(res => userInfo.setUserInfo(res))
-    .then(() => popupWithFormAvatar.close())
-    .catch((err) => console.log('Ошибка изменения аватара пользователя', err))
-    .finally(() => popupWithFormAvatar.setButtonText('Сохранить'))
+    // .then(() => popupWithFormAvatar.close())
+    // .catch((err) => console.log('Ошибка изменения аватара пользователя', err))
+    // .finally(() => popupWithFormAvatar.setButtonText('Сохранить'))
 })
 
 const section = new Section((item) => section.addItem(createNewItem(item)), cardListSelector);

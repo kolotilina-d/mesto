@@ -13,8 +13,6 @@ export const templateSelector = '#card';
 export const popupImageSelector = '.popup_photo';
 export const deleteCardSelector = '.popup_delete-card';
 export const formValidators = {};
-export const placeInput = document.querySelector('#description');
-export const urlInput = document.querySelector('#link');
 export const cardListSelector = ".gallery__elements";
 
 export const config = {

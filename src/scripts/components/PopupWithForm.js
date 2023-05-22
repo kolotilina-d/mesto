@@ -9,9 +9,9 @@ export default class PopupWithForm extends Popup {
     this._button = this._form.querySelector('.popup__submit');
   }
 
-  setButtonText(text) {
-    this._button.value = text
-  }
+  // setButtonText(text) {
+  //   this._button.value = text
+  // }
 
   close() {
     super.close();
@@ -32,12 +32,27 @@ export default class PopupWithForm extends Popup {
     })
   }
 
-  setEventListeners() {
-    super.setEventListeners();
-    this._form.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      this.setButtonText('Сохранение...')
-      this._submitFormcallback(this._getInputValues());
-    });
-  }
+//   setEventListeners() {
+//     super.setEventListeners();
+//     this._form.addEventListener('submit', (evt) => {
+//       evt.preventDefault();
+//       this.setButtonText('Сохранение...')
+//       this._submitFormcallback(this._getInputValues());
+//     });
+//   }
+setEventListeners() {
+  super.setEventListeners();
+  this._form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const initialText = this._button.value;
+    this._button.value = 'Сохранение...';
+    this._submitFormcallback(this._getInputValues())
+      .then(() => console.log(this))
+      .then(() => this.close()) 
+      .catch((err) => console.log('Ошибка изменения данных', err))
+      .finally(() => {
+        this._button.value = initialText;
+      }) 
+  });
+}
 }
