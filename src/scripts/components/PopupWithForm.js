@@ -35,7 +35,6 @@ export default class PopupWithForm extends Popup {
     const initialText = this._button.value;
     this._button.value = 'Сохранение...';
     this._submitFormcallback(this._getInputValues())
-      .then(() => console.log(this))
       .then(() => this.close()) 
       .catch((err) => console.log('Ошибка изменения данных', err))
       .finally(() => {

@@ -36,11 +36,10 @@ const createNewItem = (data) => {
     handleCardDeleteClick: (id) => {
       popupWithSubmit.open();
       popupWithSubmit.setSubmitAction(() => {
-        api.deleteCardItem(id)
+        return api.deleteCardItem(id)
           .then(() => card.deleteCard())
           .then(() => popupWithSubmit.close())
           .catch((err) => console.log('Ошибка удаления карточки', err))
-          .finally(() => popupWithFormAddCard.setButtonText('Да'))
       })
     },
     handleChangeLike: (id) => {
